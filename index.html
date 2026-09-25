@@ -1,1405 +1,553 @@
-/* =========================================
-   BLOCK TÉRMICO TREJO
-   Diseño: NexoLink
-========================================= */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
-
-:root {
-  --orange: #f36b21;
-  --orange-dark: #d95313;
-  --orange-light: #ff8b4a;
-
-  --black: #151515;
-  --dark: #202020;
-  --gray: #696969;
-  --light-gray: #f3f3f1;
-  --border: #deded9;
-  --white: #ffffff;
-
-  --max-width: 1180px;
-  --radius: 6px;
-}
-
-
-/* =========================================
-   GENERAL
-========================================= */
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-html {
-  scroll-behavior: smooth;
-}
+  <title>Block Térmico Trejo | Torreón, Coahuila</title>
 
-body {
-  font-family: "DM Sans", sans-serif;
-  background: var(--white);
-  color: var(--black);
-  line-height: 1.6;
-}
+  <meta
+    name="description"
+    content="Block Térmico Trejo. Soluciones en block térmico para construcción en Torreón, Coahuila. Solicita tu cotización."
+  >
 
-body.menu-open {
-  overflow: hidden;
-}
+  <link rel="stylesheet" href="style.css">
+</head>
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
-
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-.container {
-  width: min(90%, var(--max-width));
-  margin: 0 auto;
-}
+<body>
 
-
-/* =========================================
-   HEADER
-========================================= */
-
-.header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container nav">
 
-  background: rgba(255, 255, 255, 0.96);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      <a href="#inicio" class="brand">
 
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-}
+        <div class="brand-logo-box">
+          <img
+            src="trejo logo.jpg"
+            alt="Trejo Hebel Block Ligero"
+            class="brand-logo"
+          >
+        </div>
 
-.nav {
-  height: 82px;
+        <div class="brand-text">
+          <strong>BLOCK TÉRMICO</strong>
+          <span>TREJO</span>
+        </div>
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+      </a>
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">
+        ☰
+      </button>
 
-  flex-shrink: 0;
-}
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#productos">Productos</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto" class="nav-cta">Cotizar</a>
+      </nav>
 
+    </div>
+  </header>
 
-/* =========================================
-   LOGO HEADER
-========================================= */
 
-.brand-logo-box {
-  width: 74px;
-  height: 60px;
+  <main>
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
 
-  overflow: hidden;
+      <div class="container hero-content">
 
-  flex: 0 0 74px;
-}
+        <div class="hero-text">
 
-.brand-logo-box .brand-logo {
-  display: block;
+          <span class="eyebrow">
+            CONSTRUYE MEJOR · CONSTRUYE INTELIGENTE
+          </span>
 
-  width: 74px !important;
-  height: 60px !important;
+          <h1>
+            Soluciones en
+            <span>Block Térmico</span>
+            para tu construcción
+          </h1>
 
-  max-width: 74px !important;
+          <p>
+            Materiales pensados para proyectos que buscan eficiencia,
+            resistencia y confort térmico.
+          </p>
 
-  object-fit: contain;
+          <div class="hero-actions">
 
-  margin: 0;
-}
+            <a href="#contacto" class="btn btn-primary">
+              Solicitar cotización
+            </a>
 
-.brand-text {
-  display: flex;
-  flex-direction: column;
+            <a href="#productos" class="btn btn-secondary">
+              Ver productos
+            </a>
 
-  line-height: 1.1;
-}
+          </div>
+        </div>
 
-.brand strong {
-  font-family: "Manrope", sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-}
 
-.brand span {
-  color: var(--orange);
-  font-size: 11px;
-  letter-spacing: 3px;
-  margin-top: 5px;
-}
+        <div class="hero-card">
 
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 31px;
+          <span class="hero-card-label">
+            BLOCK TÉRMICO TREJO
+          </span>
 
-  font-size: 14px;
-  font-weight: 600;
-}
+          <h2>
+            Construcción con mayor eficiencia
+          </h2>
 
-.nav-links > a:not(.nav-cta) {
-  position: relative;
-}
+          <div class="hero-stats">
 
-.nav-links > a:not(.nav-cta)::after {
-  content: "";
-  position: absolute;
+            <div>
+              <strong>01</strong>
+              <span>Atención personalizada</span>
+            </div>
 
-  left: 0;
-  bottom: -7px;
+            <div>
+              <strong>02</strong>
+              <span>Cotización directa</span>
+            </div>
 
-  width: 0;
-  height: 2px;
+            <div>
+              <strong>03</strong>
+              <span>Soluciones para tu proyecto</span>
+            </div>
 
-  background: var(--orange);
+          </div>
+        </div>
 
-  transition: width 0.25s ease;
-}
+      </div>
+    </section>
 
-.nav-links > a:not(.nav-cta):hover::after {
-  width: 100%;
-}
 
-.nav-cta {
-  padding: 11px 21px;
-  background: var(--orange);
-  color: white;
-  transition: 0.25s ease;
-}
+    <!-- NOSOTROS -->
+    <section class="section about" id="nosotros">
 
-.nav-cta:hover {
-  background: var(--orange-dark);
-}
+      <div class="container two-columns">
 
-.menu-btn {
-  display: none;
+        <div class="section-heading">
 
-  background: none;
-  border: none;
+          <span class="section-number">01</span>
+          <span class="eyebrow dark">SOBRE NOSOTROS</span>
 
-  color: var(--black);
-  font-size: 27px;
-  cursor: pointer;
-}
+          <h2>
+            Materiales para construir
+            pensando en el futuro.
+          </h2>
 
+        </div>
 
-/* =========================================
-   HERO
-========================================= */
+        <div class="about-copy">
 
-.hero {
-  position: relative;
+          <p>
+            En <strong>Block Térmico Trejo</strong> nos dedicamos a la
+            comercialización de block térmico para proyectos de construcción.
+          </p>
 
-  min-height: 790px;
+          <p>
+            Nuestro objetivo es ayudarte a encontrar una solución adecuada
+            para tu obra, ofreciéndote atención directa y asesoría para
+            solicitar tu cotización.
+          </p>
 
-  display: flex;
-  align-items: center;
+          <a href="#contacto" class="text-link">
+            Hablar con nosotros →
+          </a>
 
-  padding-top: 82px;
+        </div>
 
-  color: white;
+      </div>
+    </section>
 
-  overflow: hidden;
 
-  background:
-    linear-gradient(
-      110deg,
-      rgba(18, 18, 18, 0.98) 0%,
-      rgba(25, 25, 25, 0.94) 55%,
-      rgba(243, 107, 33, 0.75) 140%
-    );
-}
+    <!-- PRODUCTOS -->
+    <section class="section products" id="productos">
 
-.hero::before {
-  content: "";
+      <div class="container">
 
-  position: absolute;
+        <div class="section-top">
 
-  width: 650px;
-  height: 650px;
+          <div>
+            <span class="section-number">02</span>
+            <span class="eyebrow dark">PRODUCTOS</span>
 
-  right: -220px;
-  top: -120px;
+            <h2>Conoce nuestras soluciones</h2>
+          </div>
 
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 50%;
-}
+          <p>
+            Conoce nuestros productos y los diferentes espesores
+            disponibles para tu proyecto.
+          </p>
 
-.hero::after {
-  content: "";
+        </div>
 
-  position: absolute;
 
-  width: 400px;
-  height: 400px;
+        <div class="product-grid">
 
-  right: -80px;
-  bottom: -180px;
+          <!-- PRODUCTO 1 -->
+          <article class="product-card">
 
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 50%;
-}
+            <div class="product-image">
+              <img
+                src="PRODUCTO 1.jpeg"
+                alt="Block Hebel"
+              >
+            </div>
 
-.hero-overlay {
-  position: absolute;
-  inset: 0;
+            <div class="product-info">
 
-  background-image:
-    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+              <span>HEBEL</span>
 
-  background-size: 60px 60px;
+              <h3>Block Hebel</h3>
 
-  pointer-events: none;
-}
+              <div class="product-specs">
 
-.hero-content {
-  position: relative;
-  z-index: 2;
+                <p class="spec-title">
+                  Espesores disponibles
+                </p>
 
-  display: grid;
-  grid-template-columns: 1.35fr 0.65fr;
+                <div class="spec-options">
+                  <span>15 × 20 × 61 cm</span>
+                  <span>20 × 20 × 61 cm</span>
+                </div>
 
-  gap: 85px;
+              </div>
 
-  align-items: end;
-}
+              <a href="#contacto">
+                Solicitar información →
+              </a>
 
-.eyebrow {
-  display: inline-block;
+            </div>
 
-  color: var(--orange-light);
+          </article>
 
-  font-size: 12px;
-  font-weight: 700;
 
-  letter-spacing: 2.4px;
-  text-transform: uppercase;
+          <!-- PRODUCTO 2 -->
+          <article class="product-card">
 
-  margin-bottom: 22px;
-}
+            <div class="product-image">
+              <img
+                src="PRODUCTO 2.jpeg"
+                alt="Placa Hebel"
+              >
+            </div>
 
-.eyebrow.dark {
-  color: var(--orange);
-}
+            <div class="product-info">
 
-.hero h1 {
-  max-width: 790px;
+              <span>HEBEL</span>
 
-  font-family: "Manrope", sans-serif;
+              <h3>Placa Hebel</h3>
 
-  font-size: clamp(48px, 6.3vw, 82px);
-  font-weight: 700;
+              <div class="product-specs">
 
-  line-height: 0.99;
+                <p class="spec-title">
+                  Espesor disponible
+                </p>
 
-  letter-spacing: -4px;
-}
+                <div class="spec-options">
+                  <span>5 × 20 × 62.5 cm</span>
+                </div>
 
-.hero h1 span {
-  color: var(--orange);
-}
+              </div>
 
-.hero-text > p {
-  max-width: 650px;
+              <a href="#contacto">
+                Solicitar información →
+              </a>
 
-  margin-top: 29px;
+            </div>
 
-  color: rgba(255,255,255,0.72);
+          </article>
 
-  font-size: 18px;
-  line-height: 1.7;
-}
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
+          <!-- PRODUCTO 3 -->
+          <article class="product-card">
 
-  gap: 13px;
+            <div class="product-image product-image-ligero">
+              <img
+                src="PRODUCTO 3.jpeg"
+                alt="Block Ligero"
+              >
+            </div>
 
-  margin-top: 38px;
-}
+            <div class="product-info">
 
+              <span>BLOCK LIGERO</span>
 
-/* =========================================
-   BOTONES
-========================================= */
+              <h3>Block Ligero</h3>
 
-.btn {
-  min-height: 53px;
+              <div class="product-specs">
 
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+                <p class="spec-title">
+                  Espesores disponibles
+                </p>
 
-  padding: 0 27px;
+                <div class="spec-options">
+                  <span>15 × 20 × 40 cm</span>
+                  <span>12 × 20 × 40 cm</span>
+                </div>
 
-  font-weight: 700;
-  font-size: 14px;
+              </div>
 
-  border: 1px solid transparent;
+              <a href="#contacto">
+                Solicitar información →
+              </a>
 
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
+            </div>
 
-.btn:hover {
-  transform: translateY(-2px);
-}
+          </article>
 
-.btn-primary {
-  background: var(--orange);
-  color: white;
-}
+        </div>
 
-.btn-primary:hover {
-  background: var(--orange-dark);
-}
+      </div>
+    </section>
 
-.btn-secondary {
-  border-color: rgba(255,255,255,0.25);
-  color: white;
-}
 
-.btn-secondary:hover {
-  background: white;
-  color: var(--black);
-}
+    <!-- BENEFICIOS -->
+    <section class="section benefits" id="beneficios">
 
+      <div class="container">
 
-/* =========================================
-   HERO CARD
-========================================= */
+        <div class="section-heading centered">
 
-.hero-card {
-  border-top: 3px solid var(--orange);
+          <span class="section-number">03</span>
 
-  padding: 30px;
+          <span class="eyebrow">
+            ¿POR QUÉ BLOCK TÉRMICO?
+          </span>
 
-  background: rgba(255,255,255,0.06);
+          <h2>
+            Una solución pensada para tu construcción
+          </h2>
 
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
+        </div>
 
-.hero-card-label {
-  color: var(--orange-light);
 
-  font-size: 10px;
-  font-weight: 700;
+        <div class="benefits-grid">
 
-  letter-spacing: 2px;
-}
+          <div class="benefit">
 
-.hero-card h2 {
-  margin: 12px 0 27px;
+            <span>01</span>
 
-  font-family: "Manrope", sans-serif;
+            <h3>Eficiencia térmica</h3>
 
-  font-size: 24px;
+            <p>
+              Una alternativa para proyectos que buscan mejorar el
+              comportamiento térmico de sus espacios.
+            </p>
 
-  line-height: 1.25;
-}
+          </div>
 
-.hero-stats {
-  display: grid;
-  gap: 19px;
-}
 
-.hero-stats div {
-  display: grid;
+          <div class="benefit">
 
-  grid-template-columns: 43px 1fr;
+            <span>02</span>
 
-  align-items: center;
+            <h3>Construcción</h3>
 
-  padding-top: 15px;
+            <p>
+              Material pensado para integrarse a distintos tipos de
+              proyectos y necesidades constructivas.
+            </p>
 
-  border-top: 1px solid rgba(255,255,255,0.12);
-}
+          </div>
 
-.hero-stats strong {
-  color: var(--orange);
-  font-size: 13px;
-}
 
-.hero-stats span {
-  color: rgba(255,255,255,0.76);
-  font-size: 13px;
-}
+          <div class="benefit">
 
+            <span>03</span>
 
-/* =========================================
-   SECCIONES
-========================================= */
+            <h3>Asesoría directa</h3>
 
-.section {
-  padding: 115px 0;
-}
+            <p>
+              Cuéntanos sobre tu proyecto y recibe información para
+              encontrar la opción adecuada.
+            </p>
 
-.section-number {
-  display: block;
+          </div>
 
-  margin-bottom: 13px;
+        </div>
 
-  color: #aaa;
+      </div>
+    </section>
 
-  font-size: 11px;
-  font-weight: 700;
 
-  letter-spacing: 2px;
-}
+    <!-- COTIZACIÓN -->
+    <section class="quote-section" id="contacto">
 
-.section h2 {
-  max-width: 760px;
+      <div class="container quote-wrapper">
 
-  font-family: "Manrope", sans-serif;
+        <div>
 
-  font-size: clamp(37px, 4.5vw, 58px);
+          <span class="eyebrow">
+            ¿TIENES UN PROYECTO?
+          </span>
 
-  line-height: 1.08;
+          <h2>
+            Hablemos de tu
+            próxima construcción.
+          </h2>
 
-  letter-spacing: -2.2px;
-}
+          <p>
+            Solicita información o una cotización directamente con
+            Block Térmico Trejo.
+          </p>
 
-.two-columns {
-  display: grid;
+        </div>
 
-  grid-template-columns: 1.15fr 0.85fr;
 
-  gap: 100px;
+        <div class="quote-actions">
 
-  align-items: start;
-}
+          <a
+            href="https://wa.me/528711796945"
+            target="_blank"
+            rel="noopener"
+            class="btn btn-light"
+          >
+            Cotizar por WhatsApp
+          </a>
 
+          <a
+            href="tel:+528711796945"
+            class="phone-link"
+          >
+            871 179 6945
+          </a>
 
-/* =========================================
-   NOSOTROS
-========================================= */
+        </div>
 
-.about-copy {
-  padding-top: 45px;
-}
+      </div>
+    </section>
 
-.about-copy p {
-  margin-bottom: 22px;
 
-  color: var(--gray);
+    <!-- UBICACIÓN -->
+    <section class="section location" id="ubicacion">
 
-  font-size: 17px;
-  line-height: 1.8;
-}
+      <div class="container">
 
-.about-copy strong {
-  color: var(--black);
-}
+        <div class="section-top">
 
-.text-link {
-  display: inline-block;
+          <div>
 
-  margin-top: 12px;
+            <span class="section-number">04</span>
 
-  color: var(--orange);
+            <span class="eyebrow dark">
+              UBICACIÓN
+            </span>
 
-  font-weight: 700;
-}
+            <h2>Encuéntranos</h2>
 
+          </div>
 
-/* =========================================
-   PRODUCTOS
-========================================= */
+          <p>
+            Visítanos en Block Térmico Trejo en Torreón, Coahuila.
+          </p>
 
-.products {
-  background: var(--light-gray);
-}
+        </div>
 
-.section-top {
-  display: flex;
 
-  justify-content: space-between;
-  align-items: flex-end;
+        <div class="map-container">
 
-  gap: 60px;
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3599.6602464247894!2d-103.44095809999999!3d25.549691799999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x868fdbd034d12559%3A0xc4f020565a2c7d56!2sHEBEL%20BLOCK%20TERMICO%20TREJO!5e0!3m2!1ses-419!2smx!4v1790359300798!5m2!1ses-419!2smx"
+            width="100%"
+            height="450"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Ubicación Block Térmico Trejo"
+          ></iframe>
 
-  margin-bottom: 58px;
-}
+        </div>
 
-.section-top > p {
-  max-width: 420px;
+      </div>
+    </section>
 
-  color: var(--gray);
+  </main>
 
-  font-size: 16px;
-}
 
-.product-grid {
-  display: grid;
+  <!-- FOOTER -->
+  <footer class="footer">
 
-  grid-template-columns: repeat(3, 1fr);
+    <div class="container footer-grid">
 
-  gap: 24px;
-}
+      <div class="footer-brand">
 
-.product-card {
-  overflow: hidden;
+        <div class="footer-logo-box">
+          <img
+            src="trejo logo.jpg"
+            alt="Trejo Hebel Block Ligero"
+            class="footer-logo"
+          >
+        </div>
 
-  background: white;
+        <div>
+          <strong>BLOCK TÉRMICO TREJO</strong>
+          <p>Soluciones para tu construcción.</p>
+        </div>
 
-  border: 1px solid var(--border);
+      </div>
 
-  border-radius: 8px;
 
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
+      <div class="footer-links">
 
-.product-card:hover {
-  transform: translateY(-7px);
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#ubicacion">Ubicación</a>
+        <a href="#contacto">Contacto</a>
 
-  box-shadow: 0 22px 50px rgba(0,0,0,0.10);
-}
+      </div>
 
 
-/* =========================================
-   IMÁGENES PRODUCTOS 1 Y 2
-========================================= */
+      <div class="footer-contact">
 
-.product-image {
-  position: relative;
+        <span>Torreón, Coahuila</span>
 
-  width: 100%;
-  height: 300px;
+        <a href="tel:+528711796945">
+          871 179 6945
+        </a>
 
-  overflow: hidden;
+      </div>
 
-  background: #e9e9e6;
-}
+    </div>
 
-.product-image img {
-  display: block;
 
-  width: 100%;
-  height: 100%;
+    <div class="container footer-bottom">
 
-  max-width: none;
+      <p>
+        © <span id="year"></span> Block Térmico Trejo.
+        Todos los derechos reservados.
+      </p>
 
-  object-fit: cover;
+      <p>
+        Sitio desarrollado por NexoLink
+      </p>
 
-  transition: transform 0.45s ease;
-}
+    </div>
 
-.product-card:hover .product-image img {
-  transform: scale(1.035);
-}
+  </footer>
 
 
-/* =========================================
-   PRODUCTO 3 - ENCUADRE ESPECIAL
-========================================= */
+  <!-- WHATSAPP FLOTANTE -->
+  <a
+    href="https://wa.me/528711796945"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="Contactar por WhatsApp"
+  >
+    WhatsApp
+  </a>
 
-.product-image-ligero {
-  position: relative;
 
-  width: 100%;
-  height: 300px;
+  <script src="script.js"></script>
 
-  overflow: hidden;
-
-  background: #ffffff;
-}
-
-.product-image-ligero img {
-  position: absolute;
-
-  width: 100% !important;
-  height: 100% !important;
-
-  max-width: none !important;
-
-  left: 50%;
-  top: 50%;
-
-  object-fit: cover;
-  object-position: center center;
-
-  transform: translate(-50%, -50%) scale(1.42);
-
-  transform-origin: center center;
-}
-
-.product-card:hover .product-image-ligero img {
-  transform: translate(-50%, -50%) scale(1.47);
-}
-
-
-/* =========================================
-   INFORMACIÓN PRODUCTOS
-========================================= */
-
-.product-info {
-  padding: 29px;
-}
-
-.product-info > span {
-  display: inline-block;
-
-  color: var(--orange);
-
-  font-size: 10px;
-  font-weight: 700;
-
-  letter-spacing: 1.8px;
-
-  text-transform: uppercase;
-}
-
-.product-info h3 {
-  margin: 7px 0 18px;
-
-  font-family: "Manrope", sans-serif;
-
-  font-size: 26px;
-
-  line-height: 1.2;
-}
-
-
-/* =========================================
-   ESPESORES
-========================================= */
-
-.product-specs {
-  padding-top: 17px;
-
-  border-top: 1px solid #eeeeea;
-}
-
-.product-info .spec-title {
-  min-height: auto;
-
-  margin-bottom: 11px;
-
-  color: #8a8a8a;
-
-  font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 1.2px;
-
-  text-transform: uppercase;
-}
-
-.spec-options {
-  display: flex;
-  flex-wrap: wrap;
-
-  gap: 8px;
-}
-
-.spec-options span {
-  display: inline-flex;
-
-  align-items: center;
-  justify-content: center;
-
-  padding: 8px 12px;
-
-  background: #f4f4f1;
-
-  border: 1px solid #e3e3de;
-
-  border-radius: 4px;
-
-  color: var(--black);
-
-  font-size: 13px;
-  font-weight: 700;
-
-  white-space: nowrap;
-}
-
-.product-info a {
-  display: inline-block;
-
-  margin-top: 25px;
-
-  color: var(--black);
-
-  font-size: 13px;
-  font-weight: 700;
-
-  transition: color 0.2s ease;
-}
-
-.product-info a:hover {
-  color: var(--orange);
-}
-
-
-/* =========================================
-   BENEFICIOS
-========================================= */
-
-.benefits {
-  background: #1a1a1a;
-  color: white;
-}
-
-.centered {
-  text-align: center;
-}
-
-.centered h2 {
-  margin: 0 auto;
-}
-
-.benefits-grid {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  margin-top: 70px;
-
-  border-top: 1px solid rgba(255,255,255,0.13);
-  border-bottom: 1px solid rgba(255,255,255,0.13);
-}
-
-.benefit {
-  padding: 42px 38px 46px;
-
-  border-right: 1px solid rgba(255,255,255,0.13);
-}
-
-.benefit:last-child {
-  border-right: 0;
-}
-
-.benefit > span {
-  color: var(--orange);
-
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.benefit h3 {
-  margin: 34px 0 15px;
-
-  font-family: "Manrope", sans-serif;
-
-  font-size: 25px;
-}
-
-.benefit p {
-  color: rgba(255,255,255,0.6);
-
-  font-size: 14px;
-
-  line-height: 1.8;
-}
-
-
-/* =========================================
-   COTIZACIÓN
-========================================= */
-
-.quote-section {
-  padding: 100px 0;
-
-  background: var(--orange);
-
-  color: white;
-}
-
-.quote-wrapper {
-  display: flex;
-
-  align-items: center;
-  justify-content: space-between;
-
-  gap: 80px;
-}
-
-.quote-section .eyebrow {
-  color: white;
-
-  opacity: 0.8;
-}
-
-.quote-section h2 {
-  max-width: 700px;
-
-  font-family: "Manrope", sans-serif;
-
-  font-size: clamp(38px, 5vw, 62px);
-
-  line-height: 1.04;
-
-  letter-spacing: -2px;
-}
-
-.quote-section p {
-  max-width: 610px;
-
-  margin-top: 22px;
-
-  color: rgba(255,255,255,0.85);
-}
-
-.quote-actions {
-  min-width: 230px;
-
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 17px;
-}
-
-.btn-light {
-  background: white;
-
-  color: var(--black);
-}
-
-.btn-light:hover {
-  background: var(--black);
-
-  color: white;
-}
-
-.phone-link {
-  color: white;
-
-  font-size: 20px;
-  font-weight: 700;
-
-  text-align: center;
-}
-
-
-/* =========================================
-   UBICACIÓN / GOOGLE MAPS
-========================================= */
-
-.location {
-  background: white;
-}
-
-.map-container {
-  width: 100%;
-
-  overflow: hidden;
-
-  border: 1px solid var(--border);
-
-  border-radius: 8px;
-
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
-
-  background: #eeeeee;
-}
-
-.map-container iframe {
-  display: block;
-
-  width: 100%;
-  height: 450px;
-
-  border: 0;
-}
-
-
-/* =========================================
-   FOOTER
-========================================= */
-
-.footer {
-  padding: 65px 0 25px;
-
-  background: #111;
-
-  color: white;
-}
-
-.footer-grid {
-  display: grid;
-
-  grid-template-columns: 1.4fr 0.8fr 0.8fr;
-
-  gap: 60px;
-}
-
-.footer-brand {
-  display: flex;
-
-  gap: 16px;
-
-  align-items: center;
-}
-
-
-/* LOGO FOOTER */
-
-.footer-logo-box {
-  width: 90px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  flex: 0 0 90px;
-
-  overflow: hidden;
-
-  background: white;
-
-  border-radius: 4px;
-}
-
-.footer-logo-box .footer-logo {
-  display: block;
-
-  width: 86px !important;
-  height: 66px !important;
-
-  max-width: 86px !important;
-
-  object-fit: contain;
-}
-
-.footer-brand strong {
-  display: block;
-
-  font-family: "Manrope", sans-serif;
-
-  font-size: 14px;
-}
-
-.footer-brand p {
-  margin-top: 5px;
-
-  color: #777;
-
-  font-size: 12px;
-}
-
-.footer-links,
-.footer-contact {
-  display: flex;
-
-  flex-direction: column;
-
-  gap: 9px;
-
-  font-size: 13px;
-}
-
-.footer-links a,
-.footer-contact span {
-  color: #888;
-}
-
-.footer-links a:hover {
-  color: var(--orange);
-}
-
-.footer-contact a {
-  color: white;
-
-  font-weight: 700;
-}
-
-.footer-bottom {
-  display: flex;
-
-  justify-content: space-between;
-
-  gap: 30px;
-
-  margin-top: 60px;
-
-  padding-top: 23px;
-
-  border-top: 1px solid #292929;
-
-  color: #666;
-
-  font-size: 11px;
-}
-
-
-/* =========================================
-   WHATSAPP FLOTANTE
-========================================= */
-
-.whatsapp-float {
-  position: fixed;
-
-  right: 25px;
-  bottom: 25px;
-
-  z-index: 900;
-
-  padding: 13px 20px;
-
-  background: #25d366;
-
-  color: white;
-
-  border-radius: 50px;
-
-  font-size: 13px;
-  font-weight: 700;
-
-  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
-
-.whatsapp-float:hover {
-  transform: translateY(-3px);
-
-  box-shadow: 0 12px 35px rgba(0,0,0,0.28);
-}
-
-
-/* =========================================
-   RESPONSIVE - TABLET
-========================================= */
-
-@media (max-width: 950px) {
-
-  .hero {
-    min-height: auto;
-
-    padding: 165px 0 90px;
-  }
-
-  .hero-content {
-    grid-template-columns: 1fr;
-
-    gap: 55px;
-  }
-
-  .hero-card {
-    max-width: 600px;
-  }
-
-  .two-columns {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-  .about-copy {
-    padding-top: 0;
-  }
-
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .product-card:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .quote-wrapper {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .quote-actions {
-    width: 100%;
-
-    max-width: 350px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-}
-
-
-/* =========================================
-   RESPONSIVE - CELULAR
-========================================= */
-
-@media (max-width: 760px) {
-
-  .nav {
-    height: 72px;
-  }
-
-  .brand {
-    gap: 8px;
-  }
-
-  .brand-logo-box {
-    width: 58px;
-    height: 48px;
-
-    flex-basis: 58px;
-  }
-
-  .brand-logo-box .brand-logo {
-    width: 58px !important;
-    height: 48px !important;
-
-    max-width: 58px !important;
-  }
-
-  .brand strong {
-    font-size: 11px;
-  }
-
-  .brand span {
-    font-size: 9px;
-    letter-spacing: 2px;
-  }
-
-  .menu-btn {
-    display: block;
-
-    z-index: 1001;
-  }
-
-  .nav-links {
-    position: fixed;
-
-    top: 72px;
-    left: 0;
-
-    width: 100%;
-
-    display: flex;
-
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 0;
-
-    padding: 20px 5% 35px;
-
-    background: white;
-
-    border-bottom: 1px solid var(--border);
-
-    transform: translateY(-140%);
-
-    opacity: 0;
-
-    pointer-events: none;
-
-    transition:
-      transform 0.3s ease,
-      opacity 0.3s ease;
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-
-    opacity: 1;
-
-    pointer-events: auto;
-  }
-
-  .nav-links a {
-    width: 100%;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-cta {
-    margin-top: 14px;
-
-    padding: 14px 20px !important;
-
-    text-align: center;
-
-    border: 0 !important;
-  }
-
-  .hero {
-    padding-top: 140px;
-  }
-
-  .hero h1 {
-    font-size: 50px;
-
-    letter-spacing: -2.5px;
-  }
-
-  .section {
-    padding: 80px 0;
-  }
-
-  .section-top {
-    flex-direction: column;
-
-    align-items: flex-start;
-
-    gap: 20px;
-  }
-
-  .product-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .product-card:last-child {
-    grid-column: auto;
-  }
-
-  .product-image,
-  .product-image-ligero {
-    height: 280px;
-  }
-
-  .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.32);
-  }
-
-  .product-card:hover .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.36);
-  }
-
-  .benefits-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .benefit {
-    border-right: 0;
-
-    border-bottom: 1px solid rgba(255,255,255,0.13);
-  }
-
-  .benefit:last-child {
-    border-bottom: 0;
-  }
-
-  .quote-section {
-    padding: 75px 0;
-  }
-
-  .map-container iframe {
-    height: 380px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-
-    gap: 8px;
-  }
-
-}
-
-
-/* =========================================
-   RESPONSIVE - CELULAR PEQUEÑO
-========================================= */
-
-@media (max-width: 480px) {
-
-  .brand-text {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .hero-actions {
-    flex-direction: column;
-  }
-
-  .hero-actions .btn {
-    width: 100%;
-  }
-
-  .hero-card {
-    padding: 23px;
-  }
-
-  .section h2 {
-    font-size: 36px;
-  }
-
-  .product-image,
-  .product-image-ligero {
-    height: 240px;
-  }
-
-  .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.28);
-  }
-
-  .product-card:hover .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.32);
-  }
-
-  .product-info {
-    padding: 24px;
-  }
-
-  .spec-options {
-    flex-direction: column;
-
-    align-items: flex-start;
-  }
-
-  .spec-options span {
-    width: 100%;
-
-    justify-content: flex-start;
-  }
-
-  .map-container iframe {
-    height: 330px;
-  }
-
-  .whatsapp-float {
-    right: 15px;
-
-    bottom: 15px;
-  }
-
-}
+</body>
+</html>
