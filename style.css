@@ -641,7 +641,7 @@ a {
 
 
 /* =========================================
-   PRODUCTOS 1 Y 2
+   IMÁGENES DE PRODUCTOS
 ========================================= */
 
 .product-image {
@@ -664,6 +664,7 @@ a {
   max-width: none;
 
   object-fit: cover;
+  object-position: center;
 
   transition: transform 0.45s ease;
 }
@@ -674,7 +675,8 @@ a {
 
 
 /* =========================================
-   PRODUCTO 3 - ENCUADRE CORREGIDO
+   PRODUCTO 3
+   MISMO ENCUADRE QUE PRODUCTOS 1 Y 2
 ========================================= */
 
 .product-image.product-image-ligero {
@@ -685,14 +687,13 @@ a {
 
   overflow: hidden;
 
-  background: #eeeeeb;
+  background: #e9e9e6;
 }
 
 .product-image.product-image-ligero img {
-  position: absolute;
+  display: block;
 
-  left: 50%;
-  top: 50%;
+  position: static;
 
   width: 100% !important;
   height: 100% !important;
@@ -703,15 +704,13 @@ a {
   object-fit: cover !important;
   object-position: center center !important;
 
-  transform: translate(-50%, -50%) scale(1.7) !important;
-
-  transform-origin: center center;
+  transform: none !important;
 
   transition: transform 0.45s ease;
 }
 
 .product-card:hover .product-image.product-image-ligero img {
-  transform: translate(-50%, -50%) scale(1.74) !important;
+  transform: scale(1.035) !important;
 }
 
 
@@ -1367,14 +1366,6 @@ a {
     height: 280px;
   }
 
-  .product-image.product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.55) !important;
-  }
-
-  .product-card:hover .product-image.product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.59) !important;
-  }
-
   .benefits-grid {
     grid-template-columns: 1fr;
   }
@@ -1455,14 +1446,6 @@ a {
   .product-image,
   .product-image.product-image-ligero {
     height: 240px;
-  }
-
-  .product-image.product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.45) !important;
-  }
-
-  .product-card:hover .product-image.product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.49) !important;
   }
 
   .product-info {
