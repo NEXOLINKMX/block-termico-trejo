@@ -21,6 +21,7 @@
   --radius: 6px;
 }
 
+
 /* =========================================
    GENERAL
 ========================================= */
@@ -99,19 +100,16 @@ a {
   gap: 13px;
 }
 
-.brand-mark {
-  width: 47px;
-  height: 47px;
 
-  display: grid;
-  place-items: center;
+/* LOGO REAL DEL CLIENTE */
 
-  background: var(--orange);
-  color: white;
-
-  font-family: "Manrope", sans-serif;
-  font-size: 15px;
-  font-weight: 800;
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 58px;
+  max-width: 150px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand > div:last-child {
@@ -568,7 +566,7 @@ a {
 }
 
 
-/* IMÁGENES REALES DE LOS PRODUCTOS */
+/* IMÁGENES DE PRODUCTOS */
 
 .product-image {
   width: 100%;
@@ -590,6 +588,29 @@ a {
 
 .product-card:hover .product-image img {
   transform: scale(1.035);
+}
+
+
+/* AJUSTE EXCLUSIVO PRODUCTO 3 */
+
+.product-image-ligero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+}
+
+.product-image-ligero img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  transform: scale(1.35);
+}
+
+.product-card:hover .product-image-ligero img {
+  transform: scale(1.40);
 }
 
 
@@ -896,6 +917,22 @@ a {
   align-items: center;
 }
 
+
+/* LOGO DEL FOOTER */
+
+.footer-logo {
+  display: block;
+  width: auto;
+  height: 65px;
+  max-width: 160px;
+
+  object-fit: contain;
+
+  border-radius: 4px;
+
+  flex-shrink: 0;
+}
+
 .footer-brand strong {
   display: block;
 
@@ -1063,6 +1100,11 @@ a {
     min-height: 72px;
   }
 
+  .brand-logo {
+    height: 48px;
+    max-width: 125px;
+  }
+
   .menu-btn {
     display: block;
 
@@ -1180,14 +1222,17 @@ a {
     padding: 75px 0;
   }
 
-  /* MAPA EN CELULAR */
-
   .map-container iframe {
     height: 380px;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+
+  .footer-logo {
+    height: 55px;
+    max-width: 140px;
   }
 
   .footer-bottom {
