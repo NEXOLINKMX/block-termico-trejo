@@ -76,8 +76,14 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100%;
+  height: 82px;
+  max-height: 82px;
+
   z-index: 1000;
+
+  overflow: hidden;
 
   background: rgba(255, 255, 255, 0.96);
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
@@ -88,18 +94,26 @@ a {
 
 .nav {
   height: 82px;
+  max-height: 82px;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  overflow: hidden;
 }
 
 .brand {
+  height: 82px;
+
   display: flex;
   align-items: center;
-  gap: 12px;
+
+  gap: 11px;
 
   flex-shrink: 0;
+
+  overflow: hidden;
 }
 
 
@@ -108,29 +122,42 @@ a {
 ========================================= */
 
 .brand-logo-box {
-  width: 74px;
-  height: 60px;
+  width: 90px;
+  height: 58px;
+
+  max-width: 90px;
+  max-height: 58px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  overflow: hidden;
+  flex: 0 0 90px;
 
-  flex: 0 0 74px;
+  overflow: hidden;
 }
 
 .brand-logo-box .brand-logo {
-  display: block;
+  display: block !important;
 
-  width: 74px !important;
-  height: 60px !important;
+  width: 90px !important;
+  height: 58px !important;
 
-  max-width: 74px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
 
-  object-fit: contain;
+  max-width: 90px !important;
+  max-height: 58px !important;
 
-  margin: 0;
+  object-fit: contain !important;
+  object-position: center !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  position: static !important;
+
+  transform: none !important;
 }
 
 .brand-text {
@@ -142,20 +169,24 @@ a {
 
 .brand strong {
   font-family: "Manrope", sans-serif;
+
   font-size: 14px;
   letter-spacing: 0.5px;
 }
 
 .brand span {
   color: var(--orange);
+
   font-size: 11px;
   letter-spacing: 3px;
+
   margin-top: 5px;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
+
   gap: 31px;
 
   font-size: 14px;
@@ -168,6 +199,7 @@ a {
 
 .nav-links > a:not(.nav-cta)::after {
   content: "";
+
   position: absolute;
 
   left: 0;
@@ -187,8 +219,11 @@ a {
 
 .nav-cta {
   padding: 11px 21px;
+
   background: var(--orange);
+
   color: white;
+
   transition: 0.25s ease;
 }
 
@@ -203,7 +238,9 @@ a {
   border: none;
 
   color: var(--black);
+
   font-size: 27px;
+
   cursor: pointer;
 }
 
@@ -247,6 +284,7 @@ a {
   top: -120px;
 
   border: 1px solid rgba(255, 255, 255, 0.09);
+
   border-radius: 50%;
 }
 
@@ -262,11 +300,13 @@ a {
   bottom: -180px;
 
   border: 1px solid rgba(255, 255, 255, 0.07);
+
   border-radius: 50%;
 }
 
 .hero-overlay {
   position: absolute;
+
   inset: 0;
 
   background-image:
@@ -280,9 +320,11 @@ a {
 
 .hero-content {
   position: relative;
+
   z-index: 2;
 
   display: grid;
+
   grid-template-columns: 1.35fr 0.65fr;
 
   gap: 85px;
@@ -299,6 +341,7 @@ a {
   font-weight: 700;
 
   letter-spacing: 2.4px;
+
   text-transform: uppercase;
 
   margin-bottom: 22px;
@@ -333,6 +376,7 @@ a {
   color: rgba(255,255,255,0.72);
 
   font-size: 18px;
+
   line-height: 1.7;
 }
 
@@ -354,6 +398,7 @@ a {
   min-height: 53px;
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -376,6 +421,7 @@ a {
 
 .btn-primary {
   background: var(--orange);
+
   color: white;
 }
 
@@ -385,11 +431,13 @@ a {
 
 .btn-secondary {
   border-color: rgba(255,255,255,0.25);
+
   color: white;
 }
 
 .btn-secondary:hover {
   background: white;
+
   color: var(--black);
 }
 
@@ -430,6 +478,7 @@ a {
 
 .hero-stats {
   display: grid;
+
   gap: 19px;
 }
 
@@ -447,11 +496,13 @@ a {
 
 .hero-stats strong {
   color: var(--orange);
+
   font-size: 13px;
 }
 
 .hero-stats span {
   color: rgba(255,255,255,0.76);
+
   font-size: 13px;
 }
 
@@ -514,6 +565,7 @@ a {
   color: var(--gray);
 
   font-size: 17px;
+
   line-height: 1.8;
 }
 
@@ -589,7 +641,7 @@ a {
 
 
 /* =========================================
-   IMÁGENES PRODUCTOS 1 Y 2
+   PRODUCTOS 1 Y 2
 ========================================= */
 
 .product-image {
@@ -622,10 +674,10 @@ a {
 
 
 /* =========================================
-   PRODUCTO 3 - ENCUADRE ESPECIAL
+   PRODUCTO 3 - ENCUADRE CORREGIDO
 ========================================= */
 
-.product-image-ligero {
+.product-image.product-image-ligero {
   position: relative;
 
   width: 100%;
@@ -633,30 +685,33 @@ a {
 
   overflow: hidden;
 
-  background: #ffffff;
+  background: #eeeeeb;
 }
 
-.product-image-ligero img {
+.product-image.product-image-ligero img {
   position: absolute;
+
+  left: 50%;
+  top: 50%;
 
   width: 100% !important;
   height: 100% !important;
 
   max-width: none !important;
+  max-height: none !important;
 
-  left: 50%;
-  top: 50%;
+  object-fit: cover !important;
+  object-position: center center !important;
 
-  object-fit: cover;
-  object-position: center center;
-
-  transform: translate(-50%, -50%) scale(1.42);
+  transform: translate(-50%, -50%) scale(1.7) !important;
 
   transform-origin: center center;
+
+  transition: transform 0.45s ease;
 }
 
-.product-card:hover .product-image-ligero img {
-  transform: translate(-50%, -50%) scale(1.47);
+.product-card:hover .product-image.product-image-ligero img {
+  transform: translate(-50%, -50%) scale(1.74) !important;
 }
 
 
@@ -770,6 +825,7 @@ a {
 
 .benefits {
   background: #1a1a1a;
+
   color: white;
 }
 
@@ -966,13 +1022,16 @@ a {
 }
 
 
-/* LOGO FOOTER */
+/* =========================================
+   LOGO FOOTER
+========================================= */
 
 .footer-logo-box {
   width: 90px;
   height: 70px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -992,8 +1051,13 @@ a {
   height: 66px !important;
 
   max-width: 86px !important;
+  max-height: 66px !important;
 
-  object-fit: contain;
+  object-fit: contain !important;
+
+  position: static !important;
+
+  transform: none !important;
 }
 
 .footer-brand strong {
@@ -1159,26 +1223,38 @@ a {
 
 @media (max-width: 760px) {
 
+  .header {
+    height: 72px;
+    max-height: 72px;
+  }
+
   .nav {
     height: 72px;
+    max-height: 72px;
   }
 
   .brand {
+    height: 72px;
+
     gap: 8px;
   }
 
   .brand-logo-box {
-    width: 58px;
-    height: 48px;
+    width: 70px;
+    height: 46px;
 
-    flex-basis: 58px;
+    max-width: 70px;
+    max-height: 46px;
+
+    flex: 0 0 70px;
   }
 
   .brand-logo-box .brand-logo {
-    width: 58px !important;
-    height: 48px !important;
+    width: 70px !important;
+    height: 46px !important;
 
-    max-width: 58px !important;
+    max-width: 70px !important;
+    max-height: 46px !important;
   }
 
   .brand strong {
@@ -1187,6 +1263,7 @@ a {
 
   .brand span {
     font-size: 9px;
+
     letter-spacing: 2px;
   }
 
@@ -1286,16 +1363,16 @@ a {
   }
 
   .product-image,
-  .product-image-ligero {
+  .product-image.product-image-ligero {
     height: 280px;
   }
 
-  .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.32);
+  .product-image.product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.55) !important;
   }
 
-  .product-card:hover .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.36);
+  .product-card:hover .product-image.product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.59) !important;
   }
 
   .benefits-grid {
@@ -1343,6 +1420,18 @@ a {
     display: none;
   }
 
+  .brand-logo-box {
+    width: 78px;
+
+    flex-basis: 78px;
+  }
+
+  .brand-logo-box .brand-logo {
+    width: 78px !important;
+
+    max-width: 78px !important;
+  }
+
   .hero h1 {
     font-size: 43px;
   }
@@ -1364,16 +1453,16 @@ a {
   }
 
   .product-image,
-  .product-image-ligero {
+  .product-image.product-image-ligero {
     height: 240px;
   }
 
-  .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.28);
+  .product-image.product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.45) !important;
   }
 
-  .product-card:hover .product-image-ligero img {
-    transform: translate(-50%, -50%) scale(1.32);
+  .product-card:hover .product-image.product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.49) !important;
   }
 
   .product-info {
