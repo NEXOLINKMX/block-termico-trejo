@@ -54,7 +54,7 @@ a {
 
 img {
   display: block;
-  width: 100%;
+  max-width: 100%;
 }
 
 button,
@@ -87,7 +87,7 @@ a {
 }
 
 .nav {
-  min-height: 82px;
+  height: 82px;
 
   display: flex;
   align-items: center;
@@ -97,24 +97,46 @@ a {
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
-}
+  gap: 12px;
 
-
-/* LOGO REAL DEL CLIENTE */
-
-.brand-logo {
-  display: block;
-  width: auto;
-  height: 58px;
-  max-width: 150px;
-  object-fit: contain;
   flex-shrink: 0;
 }
 
-.brand > div:last-child {
+
+/* =========================================
+   LOGO HEADER
+========================================= */
+
+.brand-logo-box {
+  width: 74px;
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  flex: 0 0 74px;
+}
+
+.brand-logo-box .brand-logo {
+  display: block;
+
+  width: 74px !important;
+  height: 60px !important;
+
+  max-width: 74px !important;
+
+  object-fit: contain;
+
+  margin: 0;
+}
+
+.brand-text {
   display: flex;
   flex-direction: column;
+
   line-height: 1.1;
 }
 
@@ -566,9 +588,13 @@ a {
 }
 
 
-/* IMÁGENES DE PRODUCTOS */
+/* =========================================
+   IMÁGENES PRODUCTOS 1 Y 2
+========================================= */
 
 .product-image {
+  position: relative;
+
   width: 100%;
   height: 300px;
 
@@ -578,8 +604,12 @@ a {
 }
 
 .product-image img {
+  display: block;
+
   width: 100%;
   height: 100%;
+
+  max-width: none;
 
   object-fit: cover;
 
@@ -591,30 +621,48 @@ a {
 }
 
 
-/* AJUSTE EXCLUSIVO PRODUCTO 3 */
+/* =========================================
+   PRODUCTO 3 - ENCUADRE ESPECIAL
+========================================= */
 
 .product-image-ligero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+
+  width: 100%;
+  height: 300px;
+
+  overflow: hidden;
+
   background: #ffffff;
 }
 
 .product-image-ligero img {
-  width: 100%;
-  height: 100%;
+  position: absolute;
 
-  object-fit: contain;
+  width: 100% !important;
+  height: 100% !important;
 
-  transform: scale(1.35);
+  max-width: none !important;
+
+  left: 50%;
+  top: 50%;
+
+  object-fit: cover;
+  object-position: center center;
+
+  transform: translate(-50%, -50%) scale(1.42);
+
+  transform-origin: center center;
 }
 
 .product-card:hover .product-image-ligero img {
-  transform: scale(1.40);
+  transform: translate(-50%, -50%) scale(1.47);
 }
 
 
-/* INFORMACIÓN DEL PRODUCTO */
+/* =========================================
+   INFORMACIÓN PRODUCTOS
+========================================= */
 
 .product-info {
   padding: 29px;
@@ -918,19 +966,34 @@ a {
 }
 
 
-/* LOGO DEL FOOTER */
+/* LOGO FOOTER */
 
-.footer-logo {
-  display: block;
-  width: auto;
-  height: 65px;
-  max-width: 160px;
+.footer-logo-box {
+  width: 90px;
+  height: 70px;
 
-  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex: 0 0 90px;
+
+  overflow: hidden;
+
+  background: white;
 
   border-radius: 4px;
+}
 
-  flex-shrink: 0;
+.footer-logo-box .footer-logo {
+  display: block;
+
+  width: 86px !important;
+  height: 66px !important;
+
+  max-width: 86px !important;
+
+  object-fit: contain;
 }
 
 .footer-brand strong {
@@ -1097,12 +1160,34 @@ a {
 @media (max-width: 760px) {
 
   .nav {
-    min-height: 72px;
+    height: 72px;
   }
 
-  .brand-logo {
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-logo-box {
+    width: 58px;
     height: 48px;
-    max-width: 125px;
+
+    flex-basis: 58px;
+  }
+
+  .brand-logo-box .brand-logo {
+    width: 58px !important;
+    height: 48px !important;
+
+    max-width: 58px !important;
+  }
+
+  .brand strong {
+    font-size: 11px;
+  }
+
+  .brand span {
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
   .menu-btn {
@@ -1200,8 +1285,17 @@ a {
     grid-column: auto;
   }
 
-  .product-image {
+  .product-image,
+  .product-image-ligero {
     height: 280px;
+  }
+
+  .product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.32);
+  }
+
+  .product-card:hover .product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.36);
   }
 
   .benefits-grid {
@@ -1230,11 +1324,6 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .footer-logo {
-    height: 55px;
-    max-width: 140px;
-  }
-
   .footer-bottom {
     flex-direction: column;
 
@@ -1249,6 +1338,10 @@ a {
 ========================================= */
 
 @media (max-width: 480px) {
+
+  .brand-text {
+    display: none;
+  }
 
   .hero h1 {
     font-size: 43px;
@@ -1270,8 +1363,17 @@ a {
     font-size: 36px;
   }
 
-  .product-image {
+  .product-image,
+  .product-image-ligero {
     height: 240px;
+  }
+
+  .product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.28);
+  }
+
+  .product-card:hover .product-image-ligero img {
+    transform: translate(-50%, -50%) scale(1.32);
   }
 
   .product-info {
