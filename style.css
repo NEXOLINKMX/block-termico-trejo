@@ -18,8 +18,12 @@
   --white: #ffffff;
 
   --max-width: 1180px;
-  --radius: 4px;
+  --radius: 6px;
 }
+
+/* =========================================
+   GENERAL
+========================================= */
 
 * {
   margin: 0;
@@ -62,9 +66,10 @@ a {
   margin: 0 auto;
 }
 
-/* ===============================
+
+/* =========================================
    HEADER
-================================ */
+========================================= */
 
 .header {
   position: fixed;
@@ -82,6 +87,7 @@ a {
 
 .nav {
   min-height: 82px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -151,6 +157,7 @@ a {
   height: 2px;
 
   background: var(--orange);
+
   transition: width 0.25s ease;
 }
 
@@ -180,12 +187,14 @@ a {
   cursor: pointer;
 }
 
-/* ===============================
+
+/* =========================================
    HERO
-================================ */
+========================================= */
 
 .hero {
   position: relative;
+
   min-height: 790px;
 
   display: flex;
@@ -208,6 +217,7 @@ a {
 
 .hero::before {
   content: "";
+
   position: absolute;
 
   width: 650px;
@@ -216,12 +226,13 @@ a {
   right: -220px;
   top: -120px;
 
-  border: 1px solid rgba(255,255,255,0.09);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 50%;
 }
 
 .hero::after {
   content: "";
+
   position: absolute;
 
   width: 400px;
@@ -230,7 +241,7 @@ a {
   right: -80px;
   bottom: -180px;
 
-  border: 1px solid rgba(255,255,255,0.07);
+  border: 1px solid rgba(255, 255, 255, 0.07);
   border-radius: 50%;
 }
 
@@ -255,6 +266,7 @@ a {
   grid-template-columns: 1.35fr 0.65fr;
 
   gap: 85px;
+
   align-items: end;
 }
 
@@ -280,10 +292,12 @@ a {
   max-width: 790px;
 
   font-family: "Manrope", sans-serif;
+
   font-size: clamp(48px, 6.3vw, 82px);
   font-weight: 700;
 
   line-height: 0.99;
+
   letter-spacing: -4px;
 }
 
@@ -305,10 +319,16 @@ a {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
+
   gap: 13px;
 
   margin-top: 38px;
 }
+
+
+/* =========================================
+   BOTONES
+========================================= */
 
 .btn {
   min-height: 53px;
@@ -353,6 +373,11 @@ a {
   color: var(--black);
 }
 
+
+/* =========================================
+   HERO CARD
+========================================= */
+
 .hero-card {
   border-top: 3px solid var(--orange);
 
@@ -369,6 +394,7 @@ a {
 
   font-size: 10px;
   font-weight: 700;
+
   letter-spacing: 2px;
 }
 
@@ -376,7 +402,9 @@ a {
   margin: 12px 0 27px;
 
   font-family: "Manrope", sans-serif;
+
   font-size: 24px;
+
   line-height: 1.25;
 }
 
@@ -387,6 +415,7 @@ a {
 
 .hero-stats div {
   display: grid;
+
   grid-template-columns: 43px 1fr;
 
   align-items: center;
@@ -406,9 +435,10 @@ a {
   font-size: 13px;
 }
 
-/* ===============================
+
+/* =========================================
    SECCIONES
-================================ */
+========================================= */
 
 .section {
   padding: 115px 0;
@@ -431,19 +461,28 @@ a {
   max-width: 760px;
 
   font-family: "Manrope", sans-serif;
+
   font-size: clamp(37px, 4.5vw, 58px);
 
   line-height: 1.08;
+
   letter-spacing: -2.2px;
 }
 
 .two-columns {
   display: grid;
+
   grid-template-columns: 1.15fr 0.85fr;
 
   gap: 100px;
+
   align-items: start;
 }
+
+
+/* =========================================
+   NOSOTROS
+========================================= */
 
 .about-copy {
   padding-top: 45px;
@@ -472,9 +511,10 @@ a {
   font-weight: 700;
 }
 
-/* ===============================
+
+/* =========================================
    PRODUCTOS
-================================ */
+========================================= */
 
 .products {
   background: var(--light-gray);
@@ -482,6 +522,7 @@ a {
 
 .section-top {
   display: flex;
+
   justify-content: space-between;
   align-items: flex-end;
 
@@ -500,15 +541,20 @@ a {
 
 .product-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
-  gap: 20px;
+  gap: 24px;
 }
 
 .product-card {
+  overflow: hidden;
+
   background: white;
 
   border: 1px solid var(--border);
+
+  border-radius: 8px;
 
   transition:
     transform 0.3s ease,
@@ -516,75 +562,142 @@ a {
 }
 
 .product-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-7px);
 
-  box-shadow: 0 22px 50px rgba(0,0,0,0.08);
+  box-shadow: 0 22px 50px rgba(0,0,0,0.10);
 }
+
+
+/* IMÁGENES REALES DE LOS PRODUCTOS */
 
 .product-image {
-  height: 285px;
+  width: 100%;
+  height: 300px;
+
+  overflow: hidden;
+
+  background: #e9e9e6;
 }
 
-.placeholder-image {
-  display: grid;
-  place-items: center;
+.product-image img {
+  width: 100%;
+  height: 100%;
 
-  background:
-    linear-gradient(135deg, #dadad5, #efefeb);
+  object-fit: cover;
 
-  color: #888;
-
-  font-size: 12px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  transition: transform 0.45s ease;
 }
+
+.product-card:hover .product-image img {
+  transform: scale(1.035);
+}
+
+
+/* INFORMACIÓN DEL PRODUCTO */
 
 .product-info {
-  padding: 28px;
+  padding: 29px;
 }
 
 .product-info > span {
+  display: inline-block;
+
   color: var(--orange);
 
   font-size: 10px;
   font-weight: 700;
 
   letter-spacing: 1.8px;
+
+  text-transform: uppercase;
 }
 
 .product-info h3 {
-  margin: 7px 0 12px;
+  margin: 7px 0 18px;
 
   font-family: "Manrope", sans-serif;
-  font-size: 25px;
+
+  font-size: 26px;
+
+  line-height: 1.2;
 }
 
-.product-info p {
-  min-height: 72px;
 
-  color: var(--gray);
+/* =========================================
+   ESPESORES
+========================================= */
 
-  font-size: 14px;
+.product-specs {
+  padding-top: 17px;
+
+  border-top: 1px solid #eeeeea;
 }
 
-.product-info a {
-  display: inline-block;
+.product-info .spec-title {
+  min-height: auto;
 
-  margin-top: 23px;
+  margin-bottom: 11px;
+
+  color: #8a8a8a;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 1.2px;
+
+  text-transform: uppercase;
+}
+
+.spec-options {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.spec-options span {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 12px;
+
+  background: #f4f4f1;
+
+  border: 1px solid #e3e3de;
+
+  border-radius: 4px;
 
   color: var(--black);
 
   font-size: 13px;
   font-weight: 700;
+
+  white-space: nowrap;
+}
+
+.product-info a {
+  display: inline-block;
+
+  margin-top: 25px;
+
+  color: var(--black);
+
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: color 0.2s ease;
 }
 
 .product-info a:hover {
   color: var(--orange);
 }
 
-/* ===============================
+
+/* =========================================
    BENEFICIOS
-================================ */
+========================================= */
 
 .benefits {
   background: #1a1a1a;
@@ -601,6 +714,7 @@ a {
 
 .benefits-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
 
   margin-top: 70px;
@@ -630,6 +744,7 @@ a {
   margin: 34px 0 15px;
 
   font-family: "Manrope", sans-serif;
+
   font-size: 25px;
 }
 
@@ -637,22 +752,26 @@ a {
   color: rgba(255,255,255,0.6);
 
   font-size: 14px;
+
   line-height: 1.8;
 }
 
-/* ===============================
+
+/* =========================================
    COTIZACIÓN
-================================ */
+========================================= */
 
 .quote-section {
   padding: 100px 0;
 
   background: var(--orange);
+
   color: white;
 }
 
 .quote-wrapper {
   display: flex;
+
   align-items: center;
   justify-content: space-between;
 
@@ -661,6 +780,7 @@ a {
 
 .quote-section .eyebrow {
   color: white;
+
   opacity: 0.8;
 }
 
@@ -672,6 +792,7 @@ a {
   font-size: clamp(38px, 5vw, 62px);
 
   line-height: 1.04;
+
   letter-spacing: -2px;
 }
 
@@ -687,6 +808,7 @@ a {
   min-width: 230px;
 
   display: flex;
+
   flex-direction: column;
 
   gap: 17px;
@@ -694,11 +816,13 @@ a {
 
 .btn-light {
   background: white;
+
   color: var(--black);
 }
 
 .btn-light:hover {
   background: var(--black);
+
   color: white;
 }
 
@@ -711,67 +835,54 @@ a {
   text-align: center;
 }
 
-/* ===============================
-   UBICACIÓN
-================================ */
+
+/* =========================================
+   UBICACIÓN / GOOGLE MAPS
+========================================= */
 
 .location {
   background: white;
 }
 
-.map-placeholder {
-  min-height: 400px;
+.map-container {
+  width: 100%;
 
-  display: grid;
-  place-items: center;
+  overflow: hidden;
 
-  background:
-    linear-gradient(
-      rgba(20,20,20,0.91),
-      rgba(20,20,20,0.91)
-    ),
-    repeating-linear-gradient(
-      45deg,
-      #333,
-      #333 10px,
-      #292929 10px,
-      #292929 20px
-    );
+  border: 1px solid var(--border);
 
-  color: white;
+  border-radius: 8px;
 
-  text-align: center;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.08);
+
+  background: #eeeeee;
 }
 
-.map-placeholder span {
-  font-size: 35px;
+.map-container iframe {
+  display: block;
+
+  width: 100%;
+  height: 450px;
+
+  border: 0;
 }
 
-.map-placeholder h3 {
-  margin-top: 10px;
 
-  font-family: "Manrope", sans-serif;
-  font-size: 25px;
-}
-
-.map-placeholder p {
-  margin-top: 5px;
-  color: #aaa;
-}
-
-/* ===============================
+/* =========================================
    FOOTER
-================================ */
+========================================= */
 
 .footer {
   padding: 65px 0 25px;
 
   background: #111;
+
   color: white;
 }
 
 .footer-grid {
   display: grid;
+
   grid-template-columns: 1.4fr 0.8fr 0.8fr;
 
   gap: 60px;
@@ -779,7 +890,9 @@ a {
 
 .footer-brand {
   display: flex;
+
   gap: 16px;
+
   align-items: center;
 }
 
@@ -787,6 +900,7 @@ a {
   display: block;
 
   font-family: "Manrope", sans-serif;
+
   font-size: 14px;
 }
 
@@ -794,12 +908,14 @@ a {
   margin-top: 5px;
 
   color: #777;
+
   font-size: 12px;
 }
 
 .footer-links,
 .footer-contact {
   display: flex;
+
   flex-direction: column;
 
   gap: 9px;
@@ -818,16 +934,19 @@ a {
 
 .footer-contact a {
   color: white;
+
   font-weight: 700;
 }
 
 .footer-bottom {
   display: flex;
+
   justify-content: space-between;
 
   gap: 30px;
 
   margin-top: 60px;
+
   padding-top: 23px;
 
   border-top: 1px solid #292929;
@@ -837,9 +956,10 @@ a {
   font-size: 11px;
 }
 
-/* ===============================
-   WHATSAPP
-================================ */
+
+/* =========================================
+   WHATSAPP FLOTANTE
+========================================= */
 
 .whatsapp-float {
   position: fixed;
@@ -852,6 +972,7 @@ a {
   padding: 13px 20px;
 
   background: #25d366;
+
   color: white;
 
   border-radius: 50px;
@@ -872,19 +993,22 @@ a {
   box-shadow: 0 12px 35px rgba(0,0,0,0.28);
 }
 
-/* ===============================
-   RESPONSIVE
-================================ */
+
+/* =========================================
+   RESPONSIVE - TABLET
+========================================= */
 
 @media (max-width: 950px) {
 
   .hero {
     min-height: auto;
+
     padding: 165px 0 90px;
   }
 
   .hero-content {
     grid-template-columns: 1fr;
+
     gap: 55px;
   }
 
@@ -894,6 +1018,7 @@ a {
 
   .two-columns {
     grid-template-columns: 1fr;
+
     gap: 25px;
   }
 
@@ -911,11 +1036,13 @@ a {
 
   .quote-wrapper {
     flex-direction: column;
+
     align-items: flex-start;
   }
 
   .quote-actions {
     width: 100%;
+
     max-width: 350px;
   }
 
@@ -925,6 +1052,11 @@ a {
 
 }
 
+
+/* =========================================
+   RESPONSIVE - CELULAR
+========================================= */
+
 @media (max-width: 760px) {
 
   .nav {
@@ -933,6 +1065,7 @@ a {
 
   .menu-btn {
     display: block;
+
     z-index: 1001;
   }
 
@@ -945,7 +1078,9 @@ a {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 0;
@@ -957,6 +1092,7 @@ a {
     border-bottom: 1px solid var(--border);
 
     transform: translateY(-140%);
+
     opacity: 0;
 
     pointer-events: none;
@@ -968,6 +1104,7 @@ a {
 
   .nav-links.active {
     transform: translateY(0);
+
     opacity: 1;
 
     pointer-events: auto;
@@ -997,6 +1134,7 @@ a {
 
   .hero h1 {
     font-size: 50px;
+
     letter-spacing: -2.5px;
   }
 
@@ -1006,6 +1144,7 @@ a {
 
   .section-top {
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 20px;
@@ -1019,12 +1158,17 @@ a {
     grid-column: auto;
   }
 
+  .product-image {
+    height: 280px;
+  }
+
   .benefits-grid {
     grid-template-columns: 1fr;
   }
 
   .benefit {
     border-right: 0;
+
     border-bottom: 1px solid rgba(255,255,255,0.13);
   }
 
@@ -1036,16 +1180,28 @@ a {
     padding: 75px 0;
   }
 
+  /* MAPA EN CELULAR */
+
+  .map-container iframe {
+    height: 380px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
 
   .footer-bottom {
     flex-direction: column;
+
     gap: 8px;
   }
 
 }
+
+
+/* =========================================
+   RESPONSIVE - CELULAR PEQUEÑO
+========================================= */
 
 @media (max-width: 480px) {
 
@@ -1070,11 +1226,32 @@ a {
   }
 
   .product-image {
-    height: 230px;
+    height: 240px;
+  }
+
+  .product-info {
+    padding: 24px;
+  }
+
+  .spec-options {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+  .spec-options span {
+    width: 100%;
+
+    justify-content: flex-start;
+  }
+
+  .map-container iframe {
+    height: 330px;
   }
 
   .whatsapp-float {
     right: 15px;
+
     bottom: 15px;
   }
 
